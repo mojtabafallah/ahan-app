@@ -1,0 +1,360 @@
+    @media(max-width: 1199px) {
+        .content-teme {
+            padding: 25px 25px;
+        }
+        .call-us-content .form-content-callUse .title-call-us {
+            font-size: 26px;
+        }
+        .call-us-content .form-content-callUse form button {
+            font-size: 19px;
+        }
+        .call-us-content {
+            padding: 45px 0;
+        }
+        .slidbar {
+            margin-top: 30px;
+            margin-bottom: 0;
+        }
+        .product-content .title-bar::before {
+            width: 205%;
+        }
+    }
+    
+    @media(max-width: 1007px) {
+        .product-content .product-title img {
+            float: none;
+        }
+        .product-content .product-title h2 {
+            float: right;
+            width: 100%;
+            margin-top: 17px;
+        }
+        .product-content p {
+            float: right;
+            width: 100%;
+            text-align: center;
+        }
+        .product-content .product-title img {
+            margin-top: 0;
+        }
+    }
+    
+    @media(max-width: 991px) {
+        .article-content .container--home {
+            overflow-x: auto;
+            display: flex;
+            white-space: nowrap;
+        }
+        .article-content .article:hover {
+            transform: scale(1);
+        }
+        .footer .email-footer {
+            letter-spacing: 21px;
+        }
+        .footer .map-footer {
+            font-size: 30px;
+        }
+        .footer .social::before {
+            width: 100%;
+        }
+        .header .content-header-left form {
+            width: 310px;
+        }
+        .menu ul li a {
+            font-size: 17px;
+        }
+        .footer .social i {
+            padding: 14px 16px;
+            font-size: 41px;
+        }
+        .footer .enemad {
+            padding: 55px 23px;
+        }
+        .content-page h1,
+        .content-page h2,
+        .content-page h3,
+        .content-page h4,
+        .content-page h5,
+        .content-page h6 {
+            text-align: center;
+        }
+        .content-page p {
+            text-align: center;
+            font-size: 22px;
+        }
+        .content-page ul {
+            text-align: center;
+        }
+        .content-page ul li {
+            float: none;
+            display: inline-block;
+            font-size: 22px;
+        }
+        .content-page ul li a {
+            font-size: 22px;
+        }
+        .content-teme {
+            padding: 0;
+            box-shadow: none;
+        }
+        .call-us-content .logo-call-us {
+            margin-bottom: 45px;
+        }
+        .content-price {
+            padding: 21px;
+        }
+        .pricelist-top h2 {
+            margin-top: 30px;
+        }
+    }
+    
+    @media(max-width: 767px) {
+        .header {
+            display: block;
+        }
+        .header .logo {
+            float: none;
+            margin-right: auto;
+            margin-left: auto;
+            width: 200px;
+        }
+        .header .content-header-left {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 11px;
+        }
+        .slider-mainIndex .content-slid strong {
+            font-size: 36px;
+        }
+        .slider-mainIndex .content-slid img {
+            width: 301px;
+            float: none;
+        }
+        .services #tabs ul {
+            display: -webkit-inline-box;
+            white-space: nowrap;
+            overflow-x: auto;
+        }
+        .services #tabs ul li {
+            width: 33.33333333333333333333333333%;
+        }
+        .col-app {
+            float: right;
+            width: 33.333333333333333333333333333333333%;
+            position: relative;
+            margin-bottom: 35px;
+        }
+        .col-app:nth-child(3)::before {
+            display: none;
+        }
+        .col-app:nth-child(4),
+        .col-app:last-child {
+            width: 50%;
+        }
+        .footer .content-footer {
+            display: block;
+        }
+        .footer .enemad {
+            padding: 55px 38%;
+            margin-top: 20px;
+        }
+        .footer .social i {
+            padding: 12px 14px;
+            font-size: 30px;
+            margin: 0 10px;
+        }
+        .call-us-content .form-content-callUse {
+            display: block;
+        }
+        .call-us-content .form-content-callUse .title-call-us {
+            width: 100%;
+            padding-bottom: 8px;
+        }
+        .call-us-content .form-content-callUse .form-call-us {
+            width: 100%;
+        }
+        .call-us-content .map-call-us,
+        .call-us-content .phone-call-us,
+        .call-us-content .social-call-us {
+            justify-content: center;
+            display: flex;
+            margin-bottom: 18px;
+        }
+        .call-us-content .social-call-us i {
+            margin: 0 8px;
+        }
+        .content-price table {
+            white-space: nowrap;
+            display: inline flow-root list-item;
+            overflow: hidden;
+            overflow-x: auto;
+        }
+        .content-price th {
+            padding: 7px 64px;
+        }
+        .product-content th,
+        .product-content td {
+            font-size: 15px;
+        }
+    }
+    
+    @media(max-width: 556px) {
+        .header .content-header-left {
+            display: block;
+        }
+        .header .content-header-left form {
+            width: 100%;
+            margin: 0;
+        }
+        .header .content-header-left .phone {
+            width: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .border-heigth {
+            display: none;
+        }
+        .menu-mobile ul {
+            width: 100%;
+        }
+        .slider-mainIndex .content-slid strong {
+            font-size: 20px;
+        }
+        .slider-mainIndex .content-slid img {
+            width: 199px;
+        }
+        .slider-mainIndex .content-slid button {
+            font-size: 22px;
+        }
+        .services #tabs ul li {
+            width: 100%;
+        }
+        .col-app {
+            width: 100%!important;
+            padding: 0 20%;
+        }
+        .col-app::before {
+            display: none;
+        }
+        .footer .map-footer {
+            font-size: 22px;
+        }
+        .footer .email-footer {
+            letter-spacing: 0;
+        }
+        .footer .phone-footer {
+            font-size: 77px;
+        }
+        .footer .social {
+            display: flex;
+            overflow-x: auto;
+        }
+        .menu-mobile .btn-oppen-menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .menu-mobile .btn-oppen-menu i {
+            margin-left: 5px;
+        }
+        .footer .phone-footer {
+            font-size: 45px;
+        }
+        .footer .enemad {
+            padding: 55px 28%;
+        }
+        .content-page ul li,
+        .content-page ul li a,
+        .content-page p {
+            font-size: 18px;
+        }
+        h1 {
+            font-size: 33px;
+        }
+        h2 {
+            font-size: 30px;
+        }
+        h3 {
+            font-size: 20px;
+        }
+        h4 {
+            font-size: 19px;
+        }
+        h5 {
+            font-size: 18px;
+        }
+        h6 {
+            font-size: 14px;
+        }
+        .call-us-content .form-content-callUse form button {
+            float: none;
+            margin-right: auto;
+            margin-left: auto;
+            display: block;
+            width: 100%;
+        }
+        .call-us-content .logo-call-us {
+            width: 50%;
+        }
+        .call-us-content .map-call-us {
+            font-size: 14px;
+        }
+        .call-us-content .map-call-us i {
+            padding: 12px 17px;
+            font-size: 26px;
+        }
+        .call-us-content .phone-call-us i {
+            padding: 15px 17px;
+            font-size: 26px;
+        }
+        .call-us-content .social-call-us {
+            white-space: normal;
+            overflow-x: auto;
+        }
+        .menu-mobile .btn-oppen-menu {
+            padding: 18px 20px;
+            font-size: 17px;
+        }
+        .pricelist-top {
+            padding: 30px 15px;
+        }
+        .nav-bar nav {
+            white-space: nowrap;
+            overflow-x: auto;
+        }
+        .pricelist-top h2 {
+            font-size: 21px;
+            text-align: center;
+        }
+        .content-price .title-table {
+            display: block;
+        }
+        .content-price strong,
+        .content-price button {
+            width: 100%;
+        }
+        .product-content .product-title h2 {
+            font-size: 38px;
+        }
+        .product-content p {
+            font-size: 16px;
+        }
+        .product-content table {
+            float: right;
+            white-space: nowrap;
+            display: inline flow-root list-item;
+            overflow: hidden;
+            overflow-x: hidden;
+            overflow-x: auto;
+        }
+        .product-content table th {
+            padding: 10px 44px;
+        }
+        .product-content {
+            padding: 36px 6px;
+        }
+    }
