@@ -1,0 +1,37 @@
+#table {
+    background-color: #e6e6e6;
+    border-radius: 15px;
+    table {
+        margin-bottom: 10px;
+        border-radius: 20px;
+        overflow: hidden;
+        width: 100%;
+        tr {
+            &:hover {
+                background-color: #f2f2f2 !important;
+            }
+            text-align: center;
+            &:nth-child(odd) {
+                background-color: #f9fafb;
+            }
+            &:nth-child(even) {
+                background-color: white;
+            }
+        }
+        th {
+            padding: 5px 0;
+            text-align: center;
+            background-color: #a1a1a1;
+            color: white;
+        }
+        td {
+            padding: 10px 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .dis-none {
+        display: none;
+    }
+}

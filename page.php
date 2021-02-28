@@ -118,8 +118,8 @@ $image = wp_get_attachment_url($thumbnail_id);
             </div>
 
         </div>
-
-        <div class="col-sm-12">
+<div class="container">
+<div class="col-sm-12">
 
             <div class=" p-3 mt-3" id="table">
 
@@ -191,71 +191,71 @@ $image = wp_get_attachment_url($thumbnail_id);
                         <th>
                             نام
                         </th>
-                        <th>
+                        <th class="dis-none">
                             برند
                         </th>
                         <?php if (isset($item[0]['height'])): ?>
-                            <th>
+                            <th class="dis-none">
                                 ارتفاع
                             </th>
                         <?php endif; ?>
                         <?php if (isset($item[0]['karkhane'])): ?>
-                            <th>
+                            <th class="dis-none">
                                 کارخانه
                             </th>
                         <?php endif; ?>
                         <?php if (isset($item[0]['length'])): ?>
-                            <th>
+                            <th class="dis-none">
                                 طول شاخه
                             </th>
                         <?php endif; ?>
                         <?php if (isset($item[0]['scale'])): ?>
-                            <th>
+                            <th class="dis-none">
                                 ابعاد
                             </th>
                         <?php endif; ?>
                         <?php if (isset($item[0]['status'])): ?>
-                            <th>
+                            <th class="dis-none">
                                 وضعیت
                             </th>
                         <?php endif; ?>
                         <?php if (isset($item[0]['type-p'])): ?>
-                            <th>
+                            <th class="dis-none">
                                 نوع
                             </th>
                         <?php endif; ?>
                         <?php if (isset($item[0]['width'])): ?>
-                            <th>
+                            <th class="dis-none">
                                 عرض
                             </th>
                         <?php endif; ?>
                         <?php if (isset($item[0]['maftolsize'])): ?>
-                            <th>
+                            <th class="dis-none">
                                 سایز مفتول
                             </th>
                         <?php endif; ?>
                         <?php if (isset($item[0]['zekhamat'])): ?>
-                            <th>
+                            <th class="dis-none">
                                 ضخامت
                             </th>
                         <?php endif; ?>
                         <?php if (isset($item[0]['size'])): ?>
-                            <th>
+                            <th class="dis-none">
                                 سایز
                             </th>
                         <?php endif; ?>
                         <?php if (isset($item[0]['vahed'])): ?>
-                            <th>
+                            <th class="dis-none">
                                 واحد
                             </th>
                         <?php endif; ?>
                         <?php if (isset($item[0]['load'])): ?>
-                            <th>
+                            <th class="dis-none">
                                 محل بارگیری
                             </th>
                         <?php endif; ?>
                         <?php if (isset($item[0]['standard'])): ?>
-                            <th>
+                            <th class="dis-none">
                                 استاندارد
                             </th>
                         <?php endif; ?>
@@ -270,31 +270,31 @@ $image = wp_get_attachment_url($thumbnail_id);
                     <?php
                     foreach ($item as $i) {
                         echo "<tr><td> <a href=" . get_permalink() . ">" . $i['name'] . "</a></td>
-                                  <td>" . $i['brand'] . "</td>";
+                                  <td class='dis-none'>" . $i['brand'] . "</td>";
                         if (isset($i['height']))
-                            echo "<td>" . $i['height'] . "</td>";
+                            echo "<td class='dis-none'>" . $i['height'] . "</td>";
                         if (isset($i['karkhane']))
-                            echo "<td>" . $i['karkhane'] . "</td>";
+                            echo "<td class='dis-none'>" . $i['karkhane'] . "</td>";
                         if (isset($i['length']))
-                            echo "<td>" . $i['length'] . "</td>";
+                            echo "<td class='dis-none'>" . $i['length'] . "</td>";
                         if (isset($i['scale']))
-                            echo "<td>" . $i['scale'] . "</td>";
+                            echo "<td class='dis-none'>" . $i['scale'] . "</td>";
                         if (isset($i['status']))
-                            echo "<td>" . $i['status'] . "</td>";
+                            echo "<td class='dis-none'>" . $i['status'] . "</td>";
                         if (isset($i['type-p']))
-                            echo "<td>" . $i['type-p'] . "</td>";
+                            echo "<td class='dis-none'>" . $i['type-p'] . "</td>";
                         if (isset($i['width']))
-                            echo "<td>" . $i['width'] . "</td>";
+                            echo "<td class='dis-none'>" . $i['width'] . "</td>";
                         if (isset($i['zekhamat']))
-                            echo "<td>" . $i['zekhamat'] . "</td>";
+                            echo "<td class='dis-none'>" . $i['zekhamat'] . "</td>";
                         if (isset($i['size']))
-                            echo "<td>" . $i['size'] . "</td>";
+                            echo "<td class='dis-none'>" . $i['size'] . "</td>";
                         if (isset($i['vahed']))
-                            echo "<td>" . $i['vahed'] . "</td>";
+                            echo "<td class='dis-none'>" . $i['vahed'] . "</td>";
                         if (isset($i['load']))
-                            echo "<td>" . $i['load'] . "</td>";
+                            echo "<td class='dis-none'>" . $i['load'] . "</td>";
                         if (isset($i['standard']))
-                            echo "<td>" . $i['standard'] . "</td>";
+                            echo "<td class='dis-none'>" . $i['standard'] . "</td>";
                         if (isset($i['price']) && $i['price'] != 0)
                             echo "<td>" . $i['price'] . "</td>";
                         else
@@ -314,6 +314,8 @@ $image = wp_get_attachment_url($thumbnail_id);
             </div>
 
         </div>
+</div>
+        
 
     </div>
 </div>

@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="<?php echo Assets::css('swiper-bundle.min.css')?>" />
     <link rel="stylesheet" href="<?php echo Assets::css('style.css')?>" />
     <link rel="stylesheet" href="<?php echo Assets::css('responsive.css')?>" />
+    <link rel="stylesheet" href="<?php echo Assets::css('table.css')?>" />
     <?php wp_head();?>
 </head>
 
