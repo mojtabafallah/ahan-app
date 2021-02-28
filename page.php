@@ -121,7 +121,7 @@ $image = wp_get_attachment_url($thumbnail_id);
             <div class=" p-3 mt-3" id="table">
 
 
-                
+
 
                 <?php
                 // var_dump($category->description);
