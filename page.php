@@ -3,6 +3,9 @@ get_header() ?>
 
 
 
+
+
+
 <?php
 $filter = "";
 if (isset($_POST['btn_filter'])) {
