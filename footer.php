@@ -79,34 +79,30 @@
 
 
 <script type="text/javascript">
-    $('.chkfilter').change(function () {
-        var name = $(this).val();
-        var kol = $('#kol').val();
-
+    jQuery('.chkfilter').change(function () {
+        var name = jQuery(this).val();
+       var kol="";
         if (this.checked) {
-            var request = $.ajax({
+            var request = jQuery.ajax({
                 type: 'post',
-                url: '/wp-content/themes/Ahanapp/getdata.php',
+                url: 'http://localhost:81/ahanapp/wp-content/themes/Ahanapp/getdata.php',
                 data: {name: name},
                 success: function (response) {
-
-                    $('#table')
+                    jQuery('#table')
                         .empty()
                         .append(response);
                 },
-
-
             });
 
-            $('#table')
+            jQuery('#table')
                 .empty()
         } else {
-            $.ajax({
+            jQuery.ajax({
                 type: 'post',
-                url: '/wp-content/themes/Ahanapp/getdata.php',
+                url: 'http://localhost:81/ahanapp/wp-content/themes/Ahanapp/getdata.php',
                 data: {name: kol},
                 success: function (response) {
-                    $('#table')
+                    jQuery('#table')
                         .empty()
                         .append(response);
                 },
@@ -115,24 +111,24 @@
                 }
 
             });
-            $('#table')
+            jQuery('#table')
                 .empty();
         }
     });
 
-    $('#table tr').each(function () {
-        var customerId = $(this).find("td:last").html();
+    jQuery('#table tr').each(function () {
+        var customerId = jQuery(this).find("td:last").html();
 
         let persianDate = moment(customerId).locale('fa').format('YYYY/M/D');
-        $(this).find("td:last").empty();
-        $(this).find("td:last").append(persianDate);
+        jQuery(this).find("td:last").empty();
+        jQuery(this).find("td:last").append(persianDate);
 
     });
     var brand = "";
-    $('#table tr').each(function () {
-        brand = $(this).find("td").eq(5).html();
+    jQuery('#table tr').each(function () {
+        brand = jQuery(this).find("td").eq(5).html();
 
-        console.log($(this).closest('h3').next().find('.table_title').html());
+        console.log(jQuery(this).closest('h3').next().find('.table_title').html());
 
 
     });
