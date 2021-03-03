@@ -44,6 +44,9 @@ $args = array(
 $products = new WP_Query($args);
 $arr_size = [];
 $arr_zekhamat = [];
+$arr_sizemaftol=[];
+$arr_scale=[];
+$arr_standard=[];
 if ($products->have_posts()):
     while ($products->have_posts()):
         $products->the_post();
@@ -59,8 +62,18 @@ if ($products->have_posts()):
         if (!empty($item)) {
             $arr_zekhamat[] = $item;
         }
-      //  $arr_zekhamat[] = array_shift(wc_get_product_terms($product->id, 'pa_zekhamat', 'names'));
-
+        $item = array_shift(wc_get_product_terms($product->id, 'pa_maftolsize', 'name'));
+        if (!empty($item)) {
+            $arr_sizemaftol[] = $item;
+        }
+        $item = array_shift(wc_get_product_terms($product->id, 'pa_scale', 'name'));
+        if (!empty($item)) {
+            $arr_scale[] = $item;
+        }
+        $item = array_shift(wc_get_product_terms($product->id, 'pa_standard', 'name'));
+        if (!empty($item)) {
+            $arr_standard[] = $item;
+        }
     endwhile;
 
 endif;
@@ -96,13 +109,62 @@ if(!is_null( $arr_zekhamat1))
     $attributes_filter .= "<details><summary>ضخامت</summary>";
     foreach ($arr_zekhamat1 as $zekhamat) {
         if (!is_null($zekhamat))
-            $attributes_filter .= '<input type="checkbox" class="chkfilter" value="' . $zekhamat . '"/> <label for="zekhamat-' . $zekhamat . '">' . $zekhamat . '</label>';
+            $attributes_filter .= '<input type="checkbox" class="chkzekhamat" value="' . $zekhamat . '"/> <label for="zekhamat-' . $zekhamat . '">' . $zekhamat . '</label>';
 
     }
     $attributes_filter .= '</details>';
 }
 
+foreach ($arr_sizemaftol as $obj) {
+    $arr_sizemaftol1 [] = $obj->name;
+}
+if(!is_null( $arr_sizemaftol1))
+{
+    $arr_sizemaftol1 = array_unique($arr_sizemaftol1);
 
+
+    $attributes_filter .= "<details><summary>سایز مفتول</summary>";
+    foreach ($arr_sizemaftol1 as $maftol) {
+        if (!is_null($maftol))
+            $attributes_filter .= '<input type="checkbox" class="chkmaftol" value="' . $maftol . '"/> <label for="maftol-' . $maftol . '">' . $maftol . '</label>';
+
+    }
+    $attributes_filter .= '</details>';
+}
+
+foreach ($arr_scale as $obj) {
+    $arr_scale1 [] = $obj->name;
+}
+if(!is_null(  $arr_scale1))
+{
+    $arr_scale1 = array_unique( $arr_scale1);
+
+
+    $attributes_filter .= "<details><summary>ابعاد</summary>";
+    foreach ($arr_scale1 as $scale) {
+        if (!is_null($scale))
+            $attributes_filter .= '<input type="checkbox" class="chkscale" value="' . $scale . '"/> <label for="scale-' . $scale . '">' . $scale . '</label>';
+
+    }
+    $attributes_filter .= '</details>';
+}
+
+foreach ($arr_standard as $obj) {
+    $arr_standard1 [] = $obj->name;
+}
+if(!is_null( $arr_standard1))
+{
+    $arr_standard1 = array_unique($arr_standard1);
+
+
+    $attributes_filter .= "<details><summary>استاندارد</summary>";
+    foreach ($arr_standard1 as $standard) {
+        if (!is_null($standard))
+            $attributes_filter .= '<input type="checkbox" class="chkstandard" value="' . $standard . '"/> <label for="standard-' . $standard . '">' . $standard . '</label>';
+
+    }
+    $attributes_filter .= '</details>';
+}
 
 $thumbnail_id = get_woocommerce_term_meta($category->term_id, 'thumbnail_id', true);
 $image = wp_get_attachment_url($thumbnail_id);
@@ -122,7 +184,7 @@ $image = wp_get_attachment_url($thumbnail_id);
                 </div>
 
                 <div class="col-md-9">
-                    <p class="h5 font-weight-bold yelow"><?php echo $category_name ?></p>
+                    <p id="cate_name" class="h5 font-weight-bold yelow"><?php echo $category_name ?></p>
 
                     <p class="jojo">
                         <?php echo get_term_meta($category->term_id, 'des_top', true); ?>

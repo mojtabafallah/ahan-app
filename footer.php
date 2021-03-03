@@ -71,7 +71,7 @@
 </footer>
 
 <script src="<?php bloginfo('template_url'); ?>/assets/js/jquery.slim.min.js ?>"></script>
-<script src="<?php bloginfo('template_url'); ?>/assets/js/jquery-3.5.1.min.js ?> "></script>
+<script src="<?php bloginfo('template_url'); ?>/assets/js/jquery-3.3.1.min.js ?> "></script>
 <script src="<?php bloginfo('template_url'); ?>/assets/js/popper.min.js ?> "></script>
 <script src="<?php bloginfo('template_url'); ?>/assets/js/bootstrap.min.js ?> "></script>
 <script src="<?php bloginfo('template_url'); ?>/assets/js/custome.js ?> "></script>
@@ -80,59 +80,66 @@
 
 <script type="text/javascript">
     jQuery('.chkfilter').change(function () {
+        var formdata = new FormData();
         var name = jQuery(this).val();
-       var kol="";
+        var catname = jQuery("#cate_name").text();
+
+
         if (this.checked) {
-            var request = jQuery.ajax({
-                type: 'post',
-                url: 'http://localhost:81/ahanapp/wp-content/themes/Ahanapp/getdata.php',
-                data: {name: name},
-                success: function (response) {
-                    jQuery('#table')
-                        .empty()
-                        .append(response);
-                },
-            });
-
-            jQuery('#table')
-                .empty()
+            formdata.append('category', catname);
+            formdata.append('name', name);
         } else {
-            jQuery.ajax({
-                type: 'post',
-                url: 'http://localhost:81/ahanapp/wp-content/themes/Ahanapp/getdata.php',
-                data: {name: kol},
-                success: function (response) {
-                    jQuery('#table')
-                        .empty()
-                        .append(response);
-                },
-                error: function (req, err) {
-                    console.log('my message' + err);
-                }
-
-            });
-            jQuery('#table')
-                .empty();
+            formdata.append('category', catname);
+            formdata.append('name', "");
         }
+
+
+        var request = jQuery.ajax({
+            type: 'post',
+            url: 'http://localhost:81/ahanapp/wp-content/themes/Ahanapp/getdata.php',
+            data: formdata,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                jQuery('#table')
+                    .empty()
+                    .append(response);
+            },
+        });
+        jQuery('#table')
+            .empty()
     });
 
-    jQuery('#table tr').each(function () {
-        var customerId = jQuery(this).find("td:last").html();
+    jQuery('.chkzekhamat').change(function () {
+        var formdata = new FormData();
+        var name = jQuery(this).val();
+        var catname = jQuery("#cate_name").text();
 
-        let persianDate = moment(customerId).locale('fa').format('YYYY/M/D');
-        jQuery(this).find("td:last").empty();
-        jQuery(this).find("td:last").append(persianDate);
 
+        if (this.checked) {
+            formdata.append('category', catname);
+            formdata.append('zekhamat', name);
+        } else {
+            formdata.append('category', catname);
+            formdata.append('zekhamat', "");
+        }
+
+
+        var request = jQuery.ajax({
+            type: 'post',
+            url: 'http://localhost:81/ahanapp/wp-content/themes/Ahanapp/getdata.php',
+            data: formdata,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                jQuery('#table')
+                    .empty()
+                    .append(response);
+            },
+        });
+        jQuery('#table')
+            .empty()
     });
-    var brand = "";
-    jQuery('#table tr').each(function () {
-        brand = jQuery(this).find("td").eq(5).html();
-
-        console.log(jQuery(this).closest('h3').next().find('.table_title').html());
-
-
-    });
-
 
 </script>
 <?php wp_footer(); ?>
