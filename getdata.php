@@ -51,6 +51,78 @@ if (isset($_POST['zekhamat'])):
         $products = new WP_Query($args);
     }
 endif;
+if (isset($_POST['maftol'])):
+    if ($_POST['maftol'] != "") {
+        $products = new WP_Query(array(
+            'post_type' => array('product'),
+            'post_status' => 'publish',
+            'product_cat' => $_POST['category'],
+            'posts_per_page' => -1,
+
+            'tax_query' => array(array(
+                'taxonomy' => 'pa_maftolsize',
+                'field' => 'slug',
+                'terms' => $_POST['maftol'],
+                'operator' => 'IN',
+            ))
+        ));
+    } else {
+        $args = [
+            'post_type' => 'product',
+            'product_cat' => $_POST['category'],
+            'posts_per_page' => -1,
+        ];
+        $products = new WP_Query($args);
+    }
+endif;
+if (isset($_POST['scale'])):
+    if ($_POST['scale'] != "") {
+        $products = new WP_Query(array(
+            'post_type' => array('product'),
+            'post_status' => 'publish',
+            'product_cat' => $_POST['category'],
+            'posts_per_page' => -1,
+
+            'tax_query' => array(array(
+                'taxonomy' => 'pa_scale',
+                'field' => 'slug',
+                'terms' => $_POST['scale'],
+                'operator' => 'IN',
+            ))
+        ));
+    } else {
+        $args = [
+            'post_type' => 'product',
+            'product_cat' => $_POST['category'],
+            'posts_per_page' => -1,
+        ];
+        $products = new WP_Query($args);
+    }
+endif;
+if (isset($_POST['standard'])):
+    if ($_POST['standard'] != "") {
+        $products = new WP_Query(array(
+            'post_type' => array('product'),
+            'post_status' => 'publish',
+            'product_cat' => $_POST['category'],
+            'posts_per_page' => -1,
+
+            'tax_query' => array(array(
+                'taxonomy' => 'pa_standard',
+                'field' => 'slug',
+                'terms' => $_POST['standard'],
+                'operator' => 'IN',
+            ))
+        ));
+    } else {
+        $args = [
+            'post_type' => 'product',
+            'product_cat' => $_POST['category'],
+            'posts_per_page' => -1,
+        ];
+        $products = new WP_Query($args);
+    }
+endif;
 $p_arr = [];
 $p_kol = [];
 if ($products->have_posts()) {

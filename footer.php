@@ -79,6 +79,31 @@
 
 
 <script type="text/javascript">
+    $( document ).ready(function() {
+        var formdata = new FormData();
+        var name = jQuery(this).val();
+        var catname = jQuery("#cate_name").text();
+
+            formdata.append('category', catname);
+            formdata.append('name', "");
+
+
+
+        var request = jQuery.ajax({
+            type: 'post',
+            url: 'http://localhost:81/ahanapp/wp-content/themes/Ahanapp/getdata.php',
+            data: formdata,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                jQuery('#table')
+                    .empty()
+                    .append(response);
+            },
+        });
+
+    });
+
     jQuery('.chkfilter').change(function () {
         var formdata = new FormData();
         var name = jQuery(this).val();
@@ -141,6 +166,101 @@
             .empty()
     });
 
+
+    jQuery('.chkmaftol').change(function () {
+        var formdata = new FormData();
+        var name = jQuery(this).val();
+        var catname = jQuery("#cate_name").text();
+
+
+        if (this.checked) {
+            formdata.append('category', catname);
+            formdata.append('maftol', name);
+        } else {
+            formdata.append('category', catname);
+            formdata.append('maftol', "");
+        }
+
+
+        var request = jQuery.ajax({
+            type: 'post',
+            url: 'http://localhost:81/ahanapp/wp-content/themes/Ahanapp/getdata.php',
+            data: formdata,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                jQuery('#table')
+                    .empty()
+                    .append(response);
+            },
+        });
+        jQuery('#table')
+            .empty()
+    });
+
+
+    jQuery('.chkscale').change(function () {
+        var formdata = new FormData();
+        var name = jQuery(this).val();
+        var catname = jQuery("#cate_name").text();
+
+
+        if (this.checked) {
+            formdata.append('category', catname);
+            formdata.append('scale', name);
+        } else {
+            formdata.append('category', catname);
+            formdata.append('scale', "");
+        }
+
+
+        var request = jQuery.ajax({
+            type: 'post',
+            url: 'http://localhost:81/ahanapp/wp-content/themes/Ahanapp/getdata.php',
+            data: formdata,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                jQuery('#table')
+                    .empty()
+                    .append(response);
+            },
+        });
+        jQuery('#table')
+            .empty()
+    });
+
+
+    jQuery('.chkstandard').change(function () {
+        var formdata = new FormData();
+        var name = jQuery(this).val();
+        var catname = jQuery("#cate_name").text();
+
+
+        if (this.checked) {
+            formdata.append('category', catname);
+            formdata.append('standard', name);
+        } else {
+            formdata.append('category', catname);
+            formdata.append('standard', "");
+        }
+
+
+        var request = jQuery.ajax({
+            type: 'post',
+            url: 'http://localhost:81/ahanapp/wp-content/themes/Ahanapp/getdata.php',
+            data: formdata,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                jQuery('#table')
+                    .empty()
+                    .append(response);
+            },
+        });
+        jQuery('#table')
+            .empty()
+    });
 </script>
 <?php wp_footer(); ?>
 </body>
